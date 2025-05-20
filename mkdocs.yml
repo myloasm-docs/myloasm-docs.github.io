@@ -1,0 +1,23 @@
+site_name: myloasm - metagenomic assembly with (noisy) long reads
+site_url: https://myloasm-docs.github.io/
+theme:
+  name: material
+  palette:
+    primary: teal
+
+
+nav:
+  - Introduction: index.md
+  - Install : install.md
+
+markdown_extensions:
+  - pymdownx.magiclink
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+plugins:
+  - search
+  - autorefs
+
+  
