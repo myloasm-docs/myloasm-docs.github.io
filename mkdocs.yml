@@ -4,11 +4,21 @@ theme:
   name: material
   palette:
     primary: teal
+  logo: assets/logo.svg
 
 
 nav:
   - Introduction: index.md
   - Install : install.md
+  - Usage: usage.md
+  - Output:
+    - Primary files: output.md
+    - Secondary files: secondary.md
+  - Quality Control: 
+    - QC Overview: qc.md
+    - QC Statistics: qc_statistics.md
+    - Manual inspection with mylotools: qc_manual.md
+
 
 markdown_extensions:
   - pymdownx.magiclink
