@@ -53,16 +53,18 @@ To find breakpoints, we can look at points on the x-axis where there are unexpec
 
 ### Case study: the above graph
 
-The [above graph](#mylotools-plot-output) is for a 99% complete but **18% contaminated** contig from an anaerobic digester metagenome. Upon close examination, at around the 2.6 million bp position:
+The [above graph](#mylotools-plot-output) is for a 99% complete but **18% contaminated** contig from an anaerobic digester metagenome. We see irregularities at around the 2.6 Mbp position.
 
 ![myloplot bp](assets/myloplot-bp.png)
 
+A few issues occur:
+
 1. The GC content has a noticeable downward shift
-2. The GC skew goes up and down again
+2. The cumulative GC skew goes up and down again
 3. The DP1/DP2 coverages are *variable and high*, whereas DP1/DP2 before the breakpoint are *consistently low*
 
 This is quite strong evidence for a chimeric join. After removing the bases from 2.6 Mbp onward and rerunning CheckM2, we get a 97% complete and **0% contaminated** contig, confirming our suspicion. 
 
 !!! note
 
-    Around the breakpoint, all overlaps have length > 8kbp and are *almost perfect* -- exact repeats. This was probably a recent lateral gene transfer event. Even with long reads, metagenomic assembly is still extremely difficult. 
+    Around the breakpoint, all overlaps have length > 8kbp and are *almost perfect*. This was probably a recent horizontally transferred region. Even with long reads, metagenomic assembly is still extremely difficult. 

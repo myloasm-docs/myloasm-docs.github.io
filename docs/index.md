@@ -1,4 +1,4 @@
- <img src='assets/logo.svg' width='80%' />
+ <img src='assets/logo.svg' width='90%' />
 
 Myloasm is a *de novo* metagenome assembler for long-read sequencing data. It takes sequencing reads and outputs polished contigs in a single command. 
 

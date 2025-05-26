@@ -24,6 +24,13 @@ cd mylotools
 pip install . 
 
 mylotools -h
+
+## plot and inspect contigs
+cd myloasm_results
+mylotools plot u32910ctg
+
+ls u32910ctg_analysis.html
+
 ```
 
 ## Quality control (QC) guides

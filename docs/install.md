@@ -33,7 +33,7 @@ cargo install --path . --features=sse --no-default-features
 
 !!! warning
 
-    Compilation should work on ARM architectures supporting NEON instructions, but I offer no guarantees on the runtime performance, which may degrade for the polishing step.
+    Compilation should work on ARM architectures supporting NEON instructions. However, runtime performance may significantly degrade for the polishing step.
 
 ```sh
 cargo install --path . --features=neon --no-default-features
