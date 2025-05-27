@@ -14,8 +14,6 @@ Below are some tentative results that we will show until the preprint comes out.
 
 ### Dataset accessions
 
-<center>
-
 | Dataset (ONT R10.4)      | Accession   | Dataset (HiFi) | Accession|
 |--------------------|-----------|----------------|----------|
 | Oral 1  ([Kiguchi et al.](https://www.biorxiv.org/content/10.1101/2024.09.30.615745v1))     | DRR582205 | Hot Spring  ([Kato et al.](https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2022.1045931/full))    | DRR290133  |
@@ -25,4 +23,3 @@ Below are some tentative results that we will show until the preprint comes out.
 | Gut 3    ([Minich et al.](http://dx.doi.org/10.2139/ssrn.4960739))          | SRR29980980 |P. Seawater  ([Priest et al.](https://peerj.com/articles/11721/))      | ERR4920901  |
 | | | S. Seawater ([Sidhu et al.](https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-023-01517-x))       | ERR9769281   |
 
-</center>
