@@ -11,12 +11,12 @@ We provide a plotting utility command called `mylotools plot` to inspect GC cont
 cd myloasm_results 
 
 mylotools plot u2912759ctg
-ls 2812759ctg_analysis.html
+ls u2912759ctg_analysis.html
 ```
 
 ### `mylotools plot` output
 
-Open the file `u262435ctg_analysis.html` in a browser and it will look like:
+Open the file `u2912759ctg_analysis.html` in a browser and it will look like:
 
  ![myloplot output](assets/myloplot2.png)
 

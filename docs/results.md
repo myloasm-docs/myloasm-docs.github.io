@@ -1,5 +1,16 @@
 Below are some tentative results that we will show until the preprint comes out. 
 
+## Algorithm outline
+
+At a high level, myloasm uses a [string graph](https://academic.oup.com/bioinformatics/article/21/suppl_2/ii79/227189) approach. Briefly, myloasm:
+
+1. aligns reads-to-reads, splits chimeric reads, and estimates coverage per read
+2. uses polymorphic, strain-specific k-mers (we call them SNPmers) to find true sequence divergence between reads 
+3. obtains a high-resolution overlap graph and finds walks (contigs) with consistent coverage using an annealing-inspired optimization approach
+4. aligns reads-to-contigs and polishes using partial order alignment (SPOA)
+
+## Results 
+
 ![alt](assets/real_data_mags.jpg)
 
 <div align="center">

@@ -8,6 +8,8 @@ Myloasm is a *de novo* metagenome assembler for long-read sequencing data. It ta
 - Nanopore R10 simplex reads with > ~97% accuracy (basecalled in *sup* or *hac* mode)
 - PacBio HiFi reads
 
+**Installation and Usage:** See the [Install](install.md) and [Usage](usage.md) sections on the navigation side bar. 
+
 ## Why myloasm?
 
 **Results**: [Here are some preliminary results for myloasm](results.md) until the preprint officially comes out.
@@ -16,7 +18,7 @@ Myloasm is a *de novo* metagenome assembler for long-read sequencing data. It ta
 
 **Strengths:** myloasm can 
 
-- assemble similar (intraspecies) *strains* better than other nanopore assemblers
+- often assemble similar (intraspecies) *strains* better than other nanopore assemblers
 - take advantage of very long reads better than de Bruijn graph approaches
 - obtain contiguous assemblies in even complex, highly heterogeneous metagenomes
 
@@ -27,13 +29,13 @@ Myloasm is a *de novo* metagenome assembler for long-read sequencing data. It ta
 - use more memory than other assemblers. Currently, a ~200 gigabase long-read human gut sample takes ~450 GB of RAM. 
 
 
+ 
 
-## Algorithm outline
+## Issues, questions, and discussions
 
-At a high level, myloasm uses a [string graph](https://academic.oup.com/bioinformatics/article/21/suppl_2/ii79/227189) approach. Myloasm disentangles the assembly graph using polymorphic, strain-specific k-mers. Myloasm then finds walks along the simplified graph with consistent coverage to obtain the final contigs. 
-
+- Found a bug or have an issue? Go to https://github.com/bluenote-1577/myloasm/issues 
+- Have a general question or discussion topic? Go to https://github.com/bluenote-1577/myloasm/discussions
 
 ## Citation
 
-Forthcoming. 
-
+Jim Shaw and Heng Li. Forthcoming. 
