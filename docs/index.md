@@ -10,7 +10,9 @@ Myloasm is a *de novo* metagenome assembler for long-read sequencing data. It ta
 
 ## Why myloasm?
 
-Myloasm was designed to take advantage of modern long reads. The main idea is that even the noisiest modern long reads (e.g., nanopore simplex R10) have become quite accurate. Myloasm uses a new approach that enables high-resolution assembly from this data.
+**Results**: [Here are some preliminary results for myloasm](results.md) until the preprint officially comes out.
+
+**Philosophy**: Myloasm was designed to take advantage of modern long reads. Even the noisiest modern long reads (e.g., nanopore simplex R10) have become quite accurate—myloasm uses a new approach that enables high-resolution assembly from this data.
 
 **Strengths:** myloasm can 
 
@@ -22,9 +24,16 @@ Myloasm was designed to take advantage of modern long reads. The main idea is th
 
 - occasionally produce chimeric misassembled contigs due to its aggressiveness.
     - we provide extra debugging information for manual curation; see [the quality control guide](qc.md).
-- use more memory than other assemblers. Currently,  a ~200 gigabase long-read human gut sample takes ~450 GB of RAM.
+- use more memory than other assemblers. Currently, a ~200 gigabase long-read human gut sample takes ~450 GB of RAM. 
+
+
 
 ## Algorithm outline
 
-At a high level, myloasm uses a [string graph](https://academic.oup.com/bioinformatics/article/21/suppl_2/ii79/227189) approach. Myloasm disentangles the overlap graph using polymorphic, strain-specific k-mers. Myloasm then finds walks along the simplified graph with consistent coverage to obtain the final contigs. 
+At a high level, myloasm uses a [string graph](https://academic.oup.com/bioinformatics/article/21/suppl_2/ii79/227189) approach. Myloasm disentangles the assembly graph using polymorphic, strain-specific k-mers. Myloasm then finds walks along the simplified graph with consistent coverage to obtain the final contigs. 
+
+
+## Citation
+
+Forthcoming. 
 

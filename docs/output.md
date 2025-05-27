@@ -8,7 +8,7 @@ myloasm_output
 ```
 
 - [The main contig file: **assembly_primary.fa**](#the-main-contig-file-assembly_primaryfa)
-    * [Contig fasta record labels](#contig-fasta-record-labels)
+    * [Contig fasta record label definition](#contig-fasta-record-label-definition)
         + [Circularity](#circularity)
         + [Estimated depth of coverage ](#estimated-depth-of-coverage)
         + [K-mer multiplicity](#k-mer-multiplicity)
@@ -20,13 +20,13 @@ myloasm_output
 
 ## The main contig file: **assembly_primary.fa**
 
-These are the main polished contigs, to be used for downstream analysis most of the time. It is labelled as "primary" because very similar (> 99% identity) contigs are dereplicated and filtered out.
+These are the main polished contigs to be used for downstream analysis most of the time. 
 
-### Contig fasta record labels
+### Contig fasta record label definition
 
 The fasta records looks like this:
 
-`>u2658272ctg_len-2275750_circular-possibly_depth-10-9-9_mult-1.00`
+>\>u2658272ctg_len-2275750_circular-possibly_depth-10-9-9_mult-1.00
 
 `u2658272ctg` is the identifier and `len-X` is the length in nucleotides. There is also information about the circularity, depth of coverage, and repetitiveness of the contig. 
 
@@ -49,7 +49,7 @@ If it has a self loop, but (1) or (2) fails above, then it is `possibly`. Otherw
 
 The three distinct values represent different levels of nucleotide identity thresholds. 
 
-1. `X1` is the depth while allowing alignments of approximately > 99% true nucleotide similarity (estimated using myloasm's SNPmer formulation). 
+1. `X1` is the depth while allowing alignments of approximately > 99% true nucleotide similarity (estimated using myloasm's SNP + k-mer formulation). 
 2. `X2` is the depth for > 99.75% similarity.
 3. `X3` is the depth for 100% similarity.
 
@@ -66,6 +66,8 @@ This is estimated by counting 21-mers across the contig and seeing how often the
 ## The final assembly graph: **final_contig_graph.gfa**
 
 Each contig in `assembly_primary.fa` is a node in the final assembly graph, `final_contig_graph.gfa`. This is in modified [GFA format](https://gfa-spec.github.io/GFA-spec/GFA1.html) and can be visualized with [Bandage](https://rrwick.github.io/Bandage/).
+
+Each `*.gfa` file has a corresponding `*.edges` file. The edges files gives more detailed information about contig-to-contig overlaps. 
 
 ### Understanding myloasm's GFA assembly graph format 
 

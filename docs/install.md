@@ -1,8 +1,19 @@
-## Conda install (forthcoming)
+## Conda install (forthcoming; may not be ready yet)
 
 ```sh
 mamba install -c bioconda myloasm
 ```
+
+## Portable x86-64 + AVX2 binary
+
+```sh
+wget https://github.com/bluenote-1577/myloasm/releases/download/v0.1.0/myloasm-0.1.0-x86_64-avx2
+chmod +x myloasm-0.1.0-x86_64-avx2
+./myloasm-0.1.0-x86_64-avx2
+```
+
+- This binary is not static but dynamically linked to older version of shared libraries: GLIBC 2.17 and GLIBCXX 3.4 (gcc)
+- Requires AVX2 instructions and x86-64 architectures (most linux machines). 
 
 ## Build from source
 

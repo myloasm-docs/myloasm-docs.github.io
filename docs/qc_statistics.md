@@ -13,15 +13,15 @@ checkm2 predict --input contigs_dir -x fa -o checkm2_results --threads 40
 ```
 ### Using k-mer multiplicity statistics for duplicates/strain chimeras
 
-Myloasm's [fasta outputs](output.md) have information about how often 21-mers are repeated (its multiplicity) within a contig: `>u123123ctg_XXX_mult-1.00`.
+Myloasm's [fasta outputs](output.md) have information about how often 21-mers are repeated (its multiplicity) within a contig: 
 
-In our experience, *prokaryotic* contigs should almost always have average k-mer multiplicity of 1.00. If you have a very long contig (> 1M bp) of multiplicity > 1.05, it may be a chimera from multiple strains of a species. 
+> \>u123123ctg_XXX_**mult-1.00** <- fasta record with k-mer multiplicity
+
+In our experience, *prokaryotic* contigs should almost always have average k-mer multiplicity near 1.00. If you have a very long contig (> 1M bp) of multiplicity > 1.05, it may be a chimera from multiple strains of a species. 
 
 **For small genomes (e.g. viruses)**, the expected k-mer multiplicity may deviate from 1.00. However, a small contig with k-mer multiplicity >> 1 can be suspicious. A contig with k-mer multiplicity = 2, 3, or an integer multiple can indicate a perfectly duplicated contig. 
 
 ### Notes on circularized contigs
-
-Myloasm can sometimes prematurely circularize contigs, i.e., claim contigs are circular even though they are not. Algorithmically, this arises due to genome repeats. 
 
 For prokaryotic genomes, low CheckM2 completeness can indicate premature circularization. However: 
 

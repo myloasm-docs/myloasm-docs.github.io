@@ -18,6 +18,7 @@ nav:
     - QC Overview: qc.md
     - QC Statistics: qc_statistics.md
     - Manual inspection with mylotools: qc_manual.md
+  - Preliminary Results: results.md
 
 
 markdown_extensions:
@@ -29,5 +30,6 @@ markdown_extensions:
 plugins:
   - search
   - autorefs
+
 
   
