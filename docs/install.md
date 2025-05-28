@@ -1,4 +1,4 @@
-## Conda install (forthcoming; may not be ready yet)
+## Conda install (x86-64 + AVX2 instructions)
 
 ```sh
 mamba install -c bioconda myloasm
@@ -12,7 +12,7 @@ chmod +x myloasm-0.1.0-x86_64-avx2
 ./myloasm-0.1.0-x86_64-avx2
 ```
 
-- This binary is not static but dynamically linked to older version of shared libraries: GLIBC 2.17 and GLIBCXX 3.4 (gcc)
+- This binary is not static but dynamically linked to older version of shared libraries (GLIBC and GLIBCXX) built on CentOS 7.
 - Requires AVX2 instructions and x86-64 architectures (most linux machines). 
 
 ## Build from source
@@ -32,15 +32,13 @@ cargo install --path .
 myloasm -h
 ```
 
-### Other systems (non AVX2 + x86-64 systems)
-
-####  SSE2 but no AVX2 instructions 
+###  SSE2 but no AVX2 instructions 
 
 ```sh
 cargo install --path . --features=sse --no-default-features
 ```
 
-#### ARM NEON instructions 
+### ARM NEON instructions 
 
 !!! warning
 
