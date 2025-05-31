@@ -8,7 +8,7 @@ Myloasm is a *de novo* metagenome assembler for long-read sequencing data. It ta
 - Nanopore R10 simplex reads with > ~97% accuracy (basecalled in *sup* or *hac* mode)
 - PacBio HiFi reads
 
-**Installation and Usage:** See the [Install](install.md) and [Usage](usage.md) sections on the navigation side bar. Source code is available at the [GitHub repo.](https://github.com/bluenote-1577/myloasm).
+**Installation and Usage:** See the [Install](install.md) and [Usage](usage.md) sections on the navigation side bar. Source code is available at the [GitHub repo.](https://github.com/bluenote-1577/myloasm)
 
 ## Why myloasm?
 
