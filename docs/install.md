@@ -7,9 +7,9 @@ mamba install -c bioconda myloasm
 ## Portable x86-64 + AVX2 binary
 
 ```sh
-wget https://github.com/bluenote-1577/myloasm/releases/download/v0.1.0/myloasm-0.1.0-x86_64-avx2
-chmod +x myloasm-0.1.0-x86_64-avx2
-./myloasm-0.1.0-x86_64-avx2
+wget https://github.com/bluenote-1577/myloasm/releases/download/v0.2.0/myloasm-0.2.0-x86_64-avx2
+chmod +x myloasm-0.2.0-x86_64-avx2
+./myloasm-0.2.0-x86_64-avx2
 ```
 
 - This binary is not static but dynamically linked to older version of shared libraries (GLIBC and GLIBCXX) built on CentOS 7.
