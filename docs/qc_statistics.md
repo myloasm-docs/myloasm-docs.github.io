@@ -15,9 +15,9 @@ checkm2 predict --input contigs_dir -x fa -o checkm2_results --threads 40
 
 Myloasm's [fasta outputs](output.md) have information about how often 21-mers are repeated (its multiplicity) within a contig: 
 
-> \>u123123ctg_XXX_**mult-1.00** <- fasta record with k-mer multiplicity
+> \>u123123ctg_XXX_**duplicated-yes mult=2.00** <- fasta record with k-mer multiplicity and duplication status.
 
-In our experience, *prokaryotic* contigs should almost always have average k-mer multiplicity near 1.00. If you have a very long contig (> 1M bp) of multiplicity > 1.05, it may be a chimera from multiple strains of a species. 
+In our experience, *prokaryotic* contigs should almost always have average k-mer multiplicity near 1.00. If you have a very long contig (> 1M bp) of multiplicity > 1.05, it may be a chimera from multiple strains of a species. We set `duplicated` to `yes` or `possibly` then the multiplicity is high. 
 
 **For small genomes (e.g. viruses)**, the expected k-mer multiplicity may deviate from 1.00. However, a small contig with k-mer multiplicity >> 1 can be suspicious. A contig with k-mer multiplicity = 2, 3, or an integer multiple can indicate a perfectly duplicated contig. 
 

@@ -10,11 +10,12 @@ theme:
 nav:
   - Introduction: index.md
   - Install : install.md
-  - Usage: usage.md
+  - Quick usage: usage.md
+  - Full option reference: cmd.md
   - Output:
     - Primary files: output.md
     - Secondary files: secondary.md
-  - Quality Control: 
+  - Quality control tools: 
     - QC Overview: qc.md
     - QC Statistics: qc_statistics.md
     - Manual inspection with mylotools: qc_manual.md

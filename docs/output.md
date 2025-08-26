@@ -26,7 +26,7 @@ These are the main polished contigs to be used for downstream analysis most of t
 
 The fasta records looks like this:
 
->\>u2658272ctg_len-2275750_circular-possibly_depth-10-9-9_mult-1.00
+>\>u2658272ctg_len-2275750_circular-possibly_depth-10-9-9_duplicated-no mult=1.00
 
 `u2658272ctg` is the identifier and `len-X` is the length in nucleotides. There is also information about the circularity, depth of coverage, and repetitiveness of the contig. 
 
@@ -53,15 +53,17 @@ The three distinct values represent different levels of nucleotide identity thre
 2. `X2` is the depth for > 99.75% similarity.
 3. `X3` is the depth for 100% similarity.
 
-#### K-mer multiplicity
+#### K-mer multiplicity and duplication
 
-`mult-X`: this is the estimated fraction of repetitiveness and useful for quality control. 
+`mult=X`: this is the estimated fraction of repetitiveness and useful for quality control. 
 
 This is estimated by counting 21-mers across the contig and seeing how often they repeat on average after removing the most frequent and least frequent 10% of k-mers. 
 
 - Most complete prokaryotic genomes should have `mult-1.00`. 
 - Sometimes myloasm erroneously concatenates two similar strain genomes together. In this case, `mult` is > 1.0 and indicative of contamination. 
 - Long reads often contain duplicate plasmids. Sometimes, a plasmid is erroneously duplicated or miscircularized, giving `mult` > 1. 
+
+If `mult` is > 1.1, then `duplicated` is `possibly`. If > 1.5, then `yes`. Otherwise, it is `no`. 
 
 ## The final assembly graph: **final_contig_graph.gfa**
 
