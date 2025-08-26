@@ -19,7 +19,7 @@ chmod +x myloasm-0.2.0-x86_64-avx2
 
 **Requirements**:
 
-* [Rust programming language](https://www.rust-lang.org/) >= v1.81
+* [Rust programming language](https://www.rust-lang.org/) >= v1.85
 * gcc 4.8+ or clang 3.4+
 * cmake 3.5+
 
@@ -42,7 +42,7 @@ cargo install --path . --features=sse --no-default-features
 
 !!! warning
 
-    Compilation should work on ARM architectures supporting NEON instructions. However, runtime performance may significantly degrade for the polishing step.
+    Compilation should work on ARM architectures supporting NEON instructions. However, runtime performance may degrade for the polishing step.
 
 ```sh
 cargo install --path . --features=neon --no-default-features
