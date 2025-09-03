@@ -14,7 +14,7 @@ Myloasm is a *de novo* metagenome assembler for long-read sequencing data. It ta
 
 **Results**: [Here are some preliminary results for myloasm](results.md) until the preprint officially comes out.
 
-**Philosophy**: Myloasm was designed to take advantage of modern long reads. Even the noisiest modern long reads (e.g., nanopore simplex R10) have become quite accurate—myloasm uses a new approach that enables high-resolution assembly from this data.
+**Philosophy**: Myloasm was designed to take advantage of modern long reads. Even the noisiest modern long reads (e.g., nanopore simplex R10) have become quite accurate. Myloasm uses a new algorithmic framework that enables high-resolution assembly from this data.
 
 **Strengths:** myloasm can 
 
@@ -24,12 +24,10 @@ Myloasm is a *de novo* metagenome assembler for long-read sequencing data. It ta
 
 **Limitations:** myloasm may
 
-- occasionally produce chimeric misassembled contigs due to its aggressiveness.
+- occasionally produce chimeric misassembled contigs, like all metagenome assemblers.
     - we provide extra debugging information for manual curation; see [the quality control guide](qc.md).
 - use more memory than other assemblers. Currently, a ~200 gigabase long-read human gut sample takes ~450 GB of RAM. 
 
-
- 
 
 ## Issues, questions, and discussions
 
@@ -38,4 +36,4 @@ Myloasm is a *de novo* metagenome assembler for long-read sequencing data. It ta
 
 ## Citation
 
-Jim Shaw and Heng Li. Forthcoming. 
+Jim Shaw, Maximillian Marin, and Heng Li. Forthcoming. 
