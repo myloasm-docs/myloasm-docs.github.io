@@ -18,6 +18,7 @@ mylotools plot u32910ctg
 ls u32910ctg_analysis.html
 
 ```
+## Notes on misassemblies
 
 Like all other metagenome assemblers, myloasm can produce erroneous assemblies.
 
