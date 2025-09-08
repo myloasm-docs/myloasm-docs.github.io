@@ -36,4 +36,4 @@ Myloasm is a *de novo* metagenome assembler for long-read sequencing data. It ta
 
 ## Citation
 
-Jim Shaw, Maximillian Marin, and Heng Li. Forthcoming. 
+[Jim Shaw, Maximillian Marin, and Heng Li. High-resolution metagenome assembly for modern long reads with myloasm. bioRxiv (2025).](https://www.biorxiv.org/content/10.1101/2025.09.05.674543v1)
