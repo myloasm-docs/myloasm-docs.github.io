@@ -1,5 +1,3 @@
-Below are some tentative results that we will show until the preprint comes out. 
-
 ## Algorithm outline
 
 At a high level, myloasm uses a [string graph](https://academic.oup.com/bioinformatics/article/21/suppl_2/ii79/227189) approach. Briefly, myloasm:
@@ -9,7 +7,12 @@ At a high level, myloasm uses a [string graph](https://academic.oup.com/bioinfor
 3. obtains a high-resolution overlap graph and finds walks (contigs) with consistent coverage using an annealing-inspired optimization approach
 4. aligns reads-to-contigs and polishes using partial order alignment (SPOA)
 
-## Results 
+## Results
+
+!!! important
+
+  The below results are slightly outdated. [See the preprint for more details](https://www.biorxiv.org/content/10.1101/2025.09.05.674543v1).
+
 
 ![alt](assets/real_data_mags.jpg)
 
