@@ -32,6 +32,8 @@ cargo install --path .
 myloasm -h
 ```
 
+Compiling from source should take a few minutes.
+
 ###  SSE2 but no AVX2 instructions 
 
 ```sh
