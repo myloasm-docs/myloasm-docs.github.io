@@ -12,7 +12,8 @@
 ├── 2-heavy_path_resolve/
 │   └── Heavy graph cleaning files
 ├── 3-mapping/
-│   └── map_to_unitigs.paf.gz
+│   ├── map_to_unitigs.paf.gz
+│   └── low_quality_regions.bed
 ├── binary_temp/
 │   └── Large binary files 
 └── alternate_assemblies/
@@ -26,11 +27,11 @@ Logging information. Has some extra information over just the stderr output.
 
 ### `assembly_graphs/`
 
-Contains intermediate assembly graphs in GFA format. [See here for more info about myloasm's GFA outputs.](output.md#the-final-assembly-graph-final_contig_graphgfa). 
+Contains intermediate assembly graphs in GFA format. [See here for more info about myloasm's GFA outputs.](output.md#the-final-assembly-graph-final_contig_graphgfa)
 
 - `unitig_graph-0.gfa` - raw unitigs with minimal cleaning. Usually extremely messy. 
 - `after_light_cleaning-1.gfa` - lightly cleaned unitigs after removing relatively small overlaps
-- `after_walk_heavy_cleaned-2.gfa` - heavily cleaned unitigs after using coverage information.
+- `after_walk_heavy_cleaned-2.gfa` - heavily cleaned unitigs after using coverage information + removing large overlaps.
 - `small_and_tip_bubble-3.gfa` - further cleaning of tips and rescuing some small circular contigs
 
 ### `0-cleaning_and_unitigs/`
@@ -58,6 +59,7 @@ These files show how read (or contigs) map to the final unpolished contigs. We u
 
 - `map_to_unitigs.paf.gz` - mapping of reads to unpolished unitigs in [PAF format](https://lh3.github.io/minimap2/minimap2.html#10). There are additional columns indicating some SNP information. 
 - `dereplicate_unitigs.paf.gz` - we map intermediate unitigs to other unitigs and filter out unitigs that map perfectly, prior to polishing. 
+- `low_quality_regions.bed` _(since v0.3.0)_ - regions with low coverage or possible chimericism found during polishing. This is generated from parsing `map_to_unitigs.paf.gz`. Some of these contigs will be filtered out in subsequent steps. This may be useful in parsing out poorly polished regions of a genome.
 
 ### `binary_temp/`
 

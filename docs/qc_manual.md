@@ -1,22 +1,30 @@
 !!! important
 
-    We will be using [mylotools](qc.md#mylotools---scripts-for-myloasm-outputs), a set of scripts for manipulating myloasm's outputs. 
+    We will be using [mylotools](mylotools.md). Make sure to install this first. 
 
-## Using `mylotools plot` to manually inspect long-read overlaps and find chimeras
+## Using `mylotools plot` or `mylotools report` to manually inspect long-read overlaps and find chimeras
 
-We provide a plotting utility command called `mylotools plot` to inspect GC content, read overlaps, and coverage information across a contig. Given a contig of interest: e.g. `uXXXXXctg`, simply do
+We can generate QC plots to inspect GC content, read overlaps, and coverage information across a contig. You can generate an interactive report for all > 300 kbp contigs with `mylotools report` with 
 
 ```sh
-# you should be in the results directory
-cd myloasm_results 
+cd myloasm_output
+mylotools report --output html_report
+```
 
+then use the dropdown menu to find a contig of interest. 
+
+
+#### Generating a report for a single contig of interest
+
+`mylotools report` is quite large. If you only want to plot a single contig of interest: e.g. `uXXXXXctg`, simply do
+
+```sh
+cd myloasm_output
 mylotools plot u2912759ctg
 ls u2912759ctg_analysis.html
 ```
 
-### `mylotools plot` output
-
-Open the file `u2912759ctg_analysis.html` in a browser and it will look like:
+### Understanding QC plots
 
  ![myloplot output](assets/myloplot2.png)
 
@@ -51,9 +59,9 @@ To find breakpoints, we can look at points on the x-axis where there are unexpec
 3. Coverage should be constant across a contig. However, DP1 (green) and DP2 (yellow) can vary significantly -- inexact repeat regions (across strains or species) can elevate the DP1/DP2 values.
 4. Read overlaps should be *long*. Small overlaps can be suspicious. High # of SNP differences are not ideal, but sometimes can not be avoided. 
 
-### Case study: the above graph
+### Case study: a contaminated contig
 
-The [above graph](#mylotools-plot-output) is for a 99% complete but **18% contaminated** contig from an anaerobic digester metagenome. We see irregularities at around the 2.6 Mbp position.
+The below graph is for a 99% complete but **18% contaminated** contig (estimated by CheckM2) from an anaerobic digester metagenome. We see irregularities at around the 2.6 Mbp position.
 
 ![myloplot bp](assets/myloplot-bp.png)
 

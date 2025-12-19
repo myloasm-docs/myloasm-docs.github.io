@@ -1,23 +1,3 @@
-## mylotools - scripts for myloasm outputs
-
-We provide a set of tools for working with myloasm assemblies called **[mylotools](https://github.com/bluenote-1577/mylotools)**. We discuss how to use `mylotools` below for quality control. To install mylotools, do
-
-```sh
-git clone https://github.com/bluenote-1577/mylotools
-cd mylotools
-
-## assuming you have python3 installed
-pip install . 
-
-mylotools -h
-
-## plot and inspect contigs
-cd myloasm_results
-mylotools plot u32910ctg
-
-ls u32910ctg_analysis.html
-
-```
 ## Notes on misassemblies
 
 Like all other metagenome assemblers, myloasm can produce erroneous assemblies.
@@ -32,15 +12,37 @@ Like all other metagenome assemblers, myloasm can produce erroneous assemblies.
 
 The cause isn't always obvious, but we often found that a *single long read* can consist of *multiple copies* of the same plasmid. 
 
-**Prematurely circuarlized contigs:** assemblers can prematurely circularize contigs, i.e., claim contigs are circular even though they are not. Algorithmically, this arises due to genome repeats.
+**Prematurely circularized contigs:** assemblers can prematurely circularize contigs, i.e., claim contigs are circular even though they are not. Algorithmically, this arises due to genome repeats.
 
+### Using CheckM2 on long prokaryotic contigs
 
-## Quality control (QC) guides
+The easiest way to filter out long (>300 kb) erroneous prokaryotic contigs is to run [CheckM2](https://github.com/chklovski/CheckM2) on individual contigs. 
 
-### Guide 1: QC statistics and interpretation
+If a chimeric contig is long enough, it will often have high CheckM contamination due to the presence of duplicated marker genes from multiple organisms. 
 
-[See here for some notes on how to obtain and interpret QC statistics from myloasm.](qc_statistics.md)
+To extract all contigs of length >= X bp and run CheckM2, you can do (with [mylotools](mylotools.md))
 
-### Guide 2: Manual inspection of myloasm's outputs with mylotools and decontaminating contigs
+```sh 
+cd myloasm_results
+mylotools extract-contigs --output-folder contigs_dir --min-contig-length X
+checkm2 predict --input contigs_dir -x fa -o checkm2_results --threads 40
+```
+### Using k-mer multiplicity statistics for duplicates/strain chimeras
 
-[See here for how the `mylotools plot` utility can provide overlap/coverage/GC information.](qc_manual.md)
+Myloasm's [fasta outputs](output.md) have information about how often 21-mers are repeated (its multiplicity) within a contig: 
+
+> \>u123123ctg_XXX_**duplicated-yes mult=2.00** <- fasta record with k-mer multiplicity and duplication status.
+
+In our experience, *prokaryotic* contigs should almost always have average k-mer multiplicity near 1.00. If you have a very long contig (> 1M bp) of multiplicity > 1.05, it may be a chimera from multiple strains of a species. We set `duplicated` to `yes` or `possibly` then the multiplicity is high. 
+
+**For small genomes (e.g. viruses)**, the expected k-mer multiplicity may deviate from 1.00. However, a small contig with k-mer multiplicity >> 1 can be suspicious. A contig with k-mer multiplicity = 2, 3, or an integer multiple can indicate a perfectly duplicated contig. 
+
+### Notes on circularized contigs
+
+For prokaryotic genomes, low CheckM2 completeness can indicate premature circularization. However: 
+
+- we have found that complete *organelle* genomes (mitochondria, plastids from microeukaryotes) can have non-trivial CheckM2 completeness (> 30% but < 90%) 
+- *secondary chromosomes* and genomes with multiple chromosomes can have lower completeness
+- some clades of microbes have low CheckM2 completeness scores, even when they're complete
+
+The myloasm tag `circular-possibly` indicates lower confidence circular genomes (due to low coverage or assembly graph ambiguity), but these can often be complete genomes, especially if CheckM2 scores are good. 

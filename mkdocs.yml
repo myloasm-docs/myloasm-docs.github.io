@@ -11,15 +11,18 @@ nav:
   - Introduction: index.md
   - Install : install.md
   - Quick usage: usage.md
-  - Full option reference: cmd.md
   - Output:
     - Primary files: output.md
     - Secondary files: secondary.md
-  - Quality control tools: 
-    - QC Overview: qc.md
-    - QC Statistics: qc_statistics.md
+  - Mylotools - quality control and manipulation: 
+    - Mylotools overview: mylotools.md
+    - QC discussion: qc.md
     - Manual inspection with mylotools: qc_manual.md
   - Preliminary Results: results.md
+  - Advanced info:
+    - Full option reference: cmd.md
+    - Changelog: CHANGELOG.md
+  - Frequently asked questions: FAQ.md
 
 
 markdown_extensions:

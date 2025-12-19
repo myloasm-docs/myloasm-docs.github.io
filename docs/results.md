@@ -1,3 +1,6 @@
+!!! important
+    [The preprint is now out!](https://www.biorxiv.org/content/10.1101/2025.09.05.674543v1) The below results are slightly out of date. 
+
 ## Algorithm outline
 
 At a high level, myloasm uses a [string graph](https://academic.oup.com/bioinformatics/article/21/suppl_2/ii79/227189) approach. Briefly, myloasm:
@@ -8,10 +11,6 @@ At a high level, myloasm uses a [string graph](https://academic.oup.com/bioinfor
 4. aligns reads-to-contigs and polishes using partial order alignment (SPOA)
 
 ## Results
-
-!!! important
-
-  The below results are slightly outdated. [See the preprint for more details](https://www.biorxiv.org/content/10.1101/2025.09.05.674543v1).
 
 
 ![alt](assets/real_data_mags.jpg)
@@ -34,6 +33,6 @@ At a high level, myloasm uses a [string graph](https://academic.oup.com/bioinfor
 | Oral 2    ([Kiguchi et al.](https://www.biorxiv.org/content/10.1101/2024.09.30.615745v1))           | DRR582179   |Anaerobic Digester ([Benoit et al.](https://www.nature.com/articles/s41587-023-01983-6)) | ERR10905741 |
 | Gut 1   ([Minich et al.](http://dx.doi.org/10.2139/ssrn.4960739))          | SRR29980972 |Chicken Gut    ([Zhang et al.](https://academic.oup.com/gigascience/article/doi/10.1093/gigascience/giac116/6833030))    | SRR19683891 |
 | Gut 2 ([Minich et al.](http://dx.doi.org/10.2139/ssrn.4960739))            | SRR29980959 |Human Gut ([Gehrig et al.](https://www.microbiologyresearch.org/content/journal/mgen/10.1099/mgen.0.000794))          | SRR15489018 |
-| Gut 3    ([Minich et al.](http://dx.doi.org/10.2139/ssrn.4960739))          | SRR29980980 |P. Seawater  ([Priest et al.](https://peerj.com/articles/11721/))      | ERR4920901  |
+| Gut 3    ([Minich et al.](https://www.cell.com/cell/fulltext/S0092-8674(25)00975-4))          | SRR29980980 |P. Seawater  ([Priest et al.](https://peerj.com/articles/11721/))      | ERR4920901  |
 | | | S. Seawater ([Sidhu et al.](https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-023-01517-x))       | ERR9769281   |
 

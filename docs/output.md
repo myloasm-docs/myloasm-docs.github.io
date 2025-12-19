@@ -11,7 +11,7 @@ myloasm_output
     * [Contig fasta record label definition](#contig-fasta-record-label-definition)
         + [Circularity](#circularity)
         + [Estimated depth of coverage ](#estimated-depth-of-coverage)
-        + [K-mer multiplicity](#k-mer-multiplicity)
+        + [K-mer multiplicity](#k-mer-multiplicity-and-duplication)
 - [The final assembly graph: **final_contig_graph.gfa**](#the-final-assembly-graph-final_contig_graphgfa)
     * [Understanding myloasm's GFA assembly graph format ](#understanding-myloasms-gfa-assembly-graph-format)
         + [Contig information ](#contig-information)
