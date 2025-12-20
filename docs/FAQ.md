@@ -10,9 +10,9 @@ Open up an [issue](https://github.com/bluenote-1577/myloasm/issues) or a [discus
 myloasm exist -o results_directory (options)`
 ```
 
-## What read QC does myloasm do? Do you need to do QC?
+## What read-level quality control does myloasm do? Do you need to do QC?
 
-Myloasm removes reads with < 1kbp and < X% mean base quality; X is estimated from `--quality-value-cutoff` as estimated from the fastq. **Adapters are not removed from the reads**. 
+Myloasm removes reads with < 1kbp and < X% mean base quality; X is taken from `--quality-value-cutoff` (default = 90) using the fastq. **Adapters are not removed from the reads**. 
 
 Adding more stringent filters is fine (e.g., filtering > 99% base quality). This could improve the assembly at the cost of losing lower coverage stuff / lower contiguity.
 

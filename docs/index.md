@@ -22,7 +22,7 @@ Myloasm is a *de novo* metagenome assembler for long-read sequencing data. It ta
 **Strengths:** myloasm can 
 
 - often assemble similar (intraspecies) *strains* better than other nanopore assemblers
-    - we have found that other nanopore assemblers collapse similar genomes at > 95% [ANI](https://www.nature.com/articles/s41576-025-00911-5)—whereas myloasm can resolve up to 99% ANI quite confidently.
+    - other nanopore assemblers **collapse similar genomes at > 95% [ANI](https://www.nature.com/articles/s41576-025-00911-5)**—myloasm can resolve up to 99% ANI quite confidently.
 - obtain contiguous assemblies in diverse metagenomes from human gut to soil
 - myloasm uses about the same RAM as metaFlye with faster runtime
 
