@@ -1,0 +1,1220 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://myloasm-docs.github.io/cmd/">
+      
+      
+        <link rel="prev" href="../results/">
+      
+      
+        <link rel="next" href="../CHANGELOG/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Full option reference - myloasm - metagenomic assembly with (noisy) long reads</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#command-line-help-for-myloasm" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="myloasm - metagenomic assembly with (noisy) long reads" class="md-header__button md-logo" aria-label="myloasm - metagenomic assembly with (noisy) long reads" data-md-component="logo">
+      
+  <img src="../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            myloasm - metagenomic assembly with (noisy) long reads
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Full option reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="myloasm - metagenomic assembly with (noisy) long reads" class="md-nav__button md-logo" aria-label="myloasm - metagenomic assembly with (noisy) long reads" data-md-component="logo">
+      
+  <img src="../assets/logo.svg" alt="logo">
+
+    </a>
+    myloasm - metagenomic assembly with (noisy) long reads
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Output
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Output
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../output/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Primary files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../secondary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secondary files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mylotools - quality control and manipulation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mylotools - quality control and manipulation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mylotools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mylotools overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QC discussion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qc_manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual inspection with mylotools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preliminary Results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced info
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced info
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full option reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full option reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#myloasm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        myloasm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="myloasm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arguments:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-algorithmic-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Algorithmic Parameters:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph-parameters-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graph Parameters (advanced):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miscellaneous-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Miscellaneous Options:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-thresholds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output thresholds:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overlap-parameters-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overlap Parameters (advanced):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technology-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technology Presets:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CHANGELOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frequently asked questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#myloasm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        myloasm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="myloasm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arguments:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-algorithmic-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Algorithmic Parameters:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph-parameters-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graph Parameters (advanced):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miscellaneous-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Miscellaneous Options:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-thresholds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output thresholds:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overlap-parameters-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overlap Parameters (advanced):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technology-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technology Presets:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="command-line-help-for-myloasm">Command-Line Help for <code>myloasm</code></h1>
+<p>This document contains the help content for the <code>myloasm</code> command-line program.</p>
+<p><strong>Command Overview:</strong></p>
+<ul>
+<li><a href="#myloasm"><code>myloasm</code>↴</a></li>
+</ul>
+<h2 id="myloasm"><code>myloasm</code></h2>
+<p>myloasm - high-resolution metagenomic assembly with noisy long reads. See online documentation for full options.</p>
+<p>EXAMPLE (Nanopore R10): myloasm nanopore_reads.fq.gz -o output_directory -t 50
+EXAMPLE (PacBio HiFi): myloasm pacbio_reads.fq.gz -o output_directory -t 50 --hifi</p>
+<p><strong>Usage:</strong> <code>myloasm [OPTIONS] &lt;FASTQ/FASTA (.gz)&gt;...</code></p>
+<h3 id="arguments"><strong>Arguments:</strong></h3>
+<ul>
+<li><code>&lt;FASTQ/FASTA (.gz)&gt;</code> — Input read file(s) -- multiple files are concatenated</li>
+</ul>
+<h3 id="basic-algorithmic-parameters"><strong>Basic Algorithmic Parameters:</strong></h3>
+<ul>
+<li>
+<p><code>-c</code>, <code>--c &lt;C&gt;</code> — Compression ratio (1/c k-mers selected). Must be &lt;= 15
+ [<code>11</code>]</p>
+</li>
+<li>
+<p><code>--quality-value-cutoff &lt;QUALITY_VALUE_CUTOFF&gt;</code> — Disallow reads with &lt; % identity for graph building (estimated from base qualities)
+ [<code>90</code>]</p>
+</li>
+<li>
+<p><code>--min-ol &lt;MIN_OL&gt;</code> — Minimum overlap length for graph construction
+ [<code>500</code>]</p>
+</li>
+<li>
+<p><code>-b</code>, <code>--bloom-filter-size &lt;BLOOM_FILTER_SIZE&gt;</code> — Bloom filter size in GB. Increase for massive datasets if initial k-mer counting is a bottleneck (default: automatic estimation)</p>
+</li>
+<li><code>--aggressive-bloom</code> — More aggressive filtering of low-abundance k-mers. May be non-deterministic</li>
+<li><code>--new-polish-trimming</code> — New mode: trim windows during polishing. Takes slightly longer, may incrementally improve polishing for some datasets</li>
+<li><code>-k</code>, <code>--kmer-size &lt;KMER_SIZE&gt;</code> — K-mer size (must be odd and &lt; 24)
+ [<code>21</code>]</li>
+</ul>
+<h3 id="graph-parameters-advanced"><strong>Graph Parameters (advanced):</strong></h3>
+<ul>
+<li>
+<p><code>--small-bubble-threshold &lt;SMALL_BUBBLE_THRESHOLD&gt;</code> — Base bubble popping length threshold; this gets multiplied by 5-30x during progressive graph cleaning
+ [<code>50000</code>]</p>
+</li>
+<li>
+<p><code>--z-edge-threshold &lt;Z_EDGE_THRESHOLD&gt;</code> — Cut z-edges that are &lt; this times smaller than the adjacent overlaps
+ [<code>1</code>]</p>
+</li>
+<li>
+<p><code>--tip-length-cutoff &lt;TIP_LENGTH_CUTOFF&gt;</code> — Base length of tip to remove; this gets multiplied by 5-30x during simplification
+ [<code>20000</code>]</p>
+</li>
+<li>
+<p><code>--tip-read-cutoff &lt;TIP_READ_CUTOFF&gt;</code> — Number of reads in tips to remove; this gets multiplied by 5-30x during simplification
+ [<code>3</code>]</p>
+</li>
+<li>
+<p><code>--max-bubble-threshold &lt;MAX_BUBBLE_THRESHOLD&gt;</code> — Maximum bubble length to pop; keep alternates
+ [<code>500000</code>]</p>
+</li>
+</ul>
+<h3 id="miscellaneous-options"><strong>Miscellaneous Options:</strong></h3>
+<ul>
+<li>
+<p><code>--no-polish</code> — No polishing (not recommended)
+ [<code>false</code>]</p>
+</li>
+<li>
+<p><code>--no-snpmers</code> — Disable usage of SNPmers (not recommended)
+ [<code>false</code>]</p>
+</li>
+</ul>
+<h3 id="options"><strong>Options:</strong></h3>
+<ul>
+<li>
+<p><code>-o</code>, <code>--output-dir &lt;OUTPUT_DIR&gt;</code> — Output directory for results; created if it does not exist
+ [<code>myloasm-out</code>]</p>
+</li>
+<li>
+<p><code>-t</code>, <code>--threads &lt;THREADS&gt;</code> — Number of threads to use for processing
+ [<code>20</code>]</p>
+</li>
+<li>
+<p><code>--clean-dir</code> — Do not dump large intermediate data to disk (intermediate data is useful for rerunning)</p>
+</li>
+<li><code>-l</code>, <code>--log-level &lt;LOG_LEVEL&gt;</code> — Verbosity level. Warning: trace is very verbose
+ [<code>debug</code>]</li>
+</ul>
+<p>Possible values: <code>error</code>, <code>warn</code>, <code>info</code>, <code>debug</code>, <code>trace</code></p>
+<ul>
+<li><code>--markdown-help</code> — Print this markdown document</li>
+</ul>
+<h3 id="output-thresholds"><strong>Output thresholds:</strong></h3>
+<ul>
+<li>
+<p><code>--min-reads-contig &lt;MIN_READS_CONTIG&gt;</code> — Output contigs with &gt;= this number of reads
+ [<code>1</code>]</p>
+</li>
+<li>
+<p><code>--singleton-coverage-threshold &lt;SINGLETON_COVERAGE_THRESHOLD&gt;</code> — Remove singleton contigs with &lt;= this estimated coverage depth (DP1 coverage; 99% identity coverage)
+ [<code>3</code>]</p>
+</li>
+<li>
+<p><code>--secondary-coverage-threshold &lt;SECONDARY_COVERAGE_THRESHOLD&gt;</code> — Remove contigs with &lt;= this estimated coverage depth and &lt;= 2 reads (DP1 coverage; 99% identity coverage)
+ [<code>1</code>]</p>
+</li>
+<li>
+<p><code>--absolute-coverage-threshold &lt;ABSOLUTE_COVERAGE_THRESHOLD&gt;</code> — Remove all contigs with &lt;= this estimated coverage depth (DP1 coverage; 99% identity coverage)</p>
+</li>
+<li>
+<p><code>--dereplication-ani &lt;DEREPLICATION_ANI&gt;</code> — Mark contigs with &gt;= this average nucleotide identity (ANI) to a larger contig as alternate
+ [<code>99</code>]</p>
+</li>
+<li>
+<p><code>--dereplication-length &lt;DEREPLICATION_LENGTH&gt;</code> — Mark contigs with &gt; 90% aligned, &lt; this length, and &gt;= --dereplication-ani as alternate
+ [<code>500000</code>]</p>
+</li>
+</ul>
+<h3 id="overlap-parameters-advanced"><strong>Overlap Parameters (advanced):</strong></h3>
+<ul>
+<li>
+<p><code>--read-map-batch-size &lt;READ_MAP_BATCH_SIZE&gt;</code> — Batch size of indexing for read-to-read mapping and overlap stage
+ [<code>1000000</code>]</p>
+</li>
+<li>
+<p><code>--snpmer-threshold-strict &lt;SNPMER_THRESHOLD_STRICT&gt;</code> — Snpmer identity threshold for containment and strict overlaps
+ [<code>100</code>]</p>
+</li>
+<li>
+<p><code>--snpmer-threshold-lax &lt;SNPMER_THRESHOLD_LAX&gt;</code> — Snpmer identity threshold for relaxed overlaps
+ [<code>99</code>]</p>
+</li>
+<li>
+<p><code>--snpmer-error-rate-lax &lt;SNPMER_ERROR_RATE_LAX&gt;</code> — Binomial test error parameter for relaxed overlaps
+ [<code>0.025</code>]</p>
+</li>
+<li>
+<p><code>--snpmer-error-rate-strict &lt;SNPMER_ERROR_RATE_STRICT&gt;</code> — Binomial test error parameter strict overlaps
+ [<code>0</code>]</p>
+</li>
+<li>
+<p><code>--contain-subsample-rate &lt;CONTAIN_SUBSAMPLE_RATE&gt;</code> — Relaxed compression ratio during containment; must be &gt; c
+ [<code>44</code>]</p>
+</li>
+<li>
+<p><code>--absolute-minimizer-cut-ratio &lt;ABSOLUTE_MINIMIZER_CUT_RATIO&gt;</code> — Cut overlaps with &gt; (c * this) number of bases between minimizers on average
+ [<code>8</code>]</p>
+</li>
+<li>
+<p><code>--relative-minimizer-cut-ratio &lt;RELATIVE_MINIMIZER_CUT_RATIO&gt;</code> — Cut overlaps with &gt; (this) times more bases between minimizers than the best overlap on average
+ [<code>5</code>]</p>
+</li>
+<li>
+<p><code>--disable-error-overlap-rescue</code> — Disables a SNPmer error overlap rescue heuristic during graph construction</p>
+</li>
+<li><code>--maximal-end-fuzz &lt;MAXIMAL_END_FUZZ&gt;</code> — Soft clips with &lt; this # of bases are allowed for alignment
+ [<code>300</code>]</li>
+</ul>
+<h3 id="technology-presets"><strong>Technology Presets:</strong></h3>
+<ul>
+<li><code>--nano-r10</code> — (DEFAULT) R10 nanopore mode for sup/hac data (&gt; ~97% median accuracy). Specifying this flag does not do anything for now</li>
+<li><code>--nano-r9</code> — R9 (old nanopore) mode for low (~90%) accuracy reads. Experimental</li>
+<li><code>--hifi</code> — PacBio HiFi mode -- assumes less chimericism and higher accuracy</li>
+</ul>
+<hr/>
+
+<p><small><i>
+    This document was generated automatically by
+    <a href="https://crates.io/crates/clap-markdown"><code>clap-markdown</code></a>.
+</i></small></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
