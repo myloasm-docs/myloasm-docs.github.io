@@ -17,9 +17,9 @@ This installs both (1) myloasm and (2) [mylotools](mylotools.md), a set of utili
 ## Portable x86-64 + AVX2 binary
 
 ```sh
-wget https://github.com/bluenote-1577/myloasm/releases/download/v0.3.0/myloasm-0.3.0-x86_64-avx2
-chmod +x myloasm-0.3.0-x86_64-avx2
-./myloasm-0.3.0-x86_64-avx2
+wget https://github.com/bluenote-1577/myloasm/releases/download/v0.4.0/myloasm-0.4.0-x86_64-avx2
+chmod +x myloasm-0.4.0-x86_64-avx2
+./myloasm-0.4.0-x86_64-avx2
 ```
 
 - This binary is not static but dynamically linked to older version of shared libraries (GLIBC and GLIBCXX) built on CentOS 7.
