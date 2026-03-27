@@ -18,7 +18,7 @@ nav:
     - Mylotools overview: mylotools.md
     - QC discussion: qc.md
     - Manual inspection with mylotools: qc_manual.md
-  - Preliminary Results: results.md
+  - Results: results.md
   - Advanced info:
     - Full option reference: cmd.md
     - Changelog: CHANGELOG.md

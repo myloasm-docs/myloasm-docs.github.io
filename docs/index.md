@@ -10,8 +10,8 @@ Myloasm is a *de novo* metagenome assembler for long-read sequencing data. It ta
 
 **Installation and Usage:** See the [Install](install.md) and [Usage](usage.md) sections on the navigation side bar. Source code is available at the [GitHub repo.](https://github.com/bluenote-1577/myloasm)
 
-!!! Important
-    Version 0.4.0 was released January 27, 2026. See [CHANGELOG](CHANGELOG.md) for more information.
+!!!announcement  
+    [Myloasm is now published in _Nature Biotechnology_.](https://www.nature.com/articles/s41587-026-03053-z)  (March 27, 2026)
 
 ## Why myloasm?
 
@@ -41,4 +41,4 @@ Myloasm is a *de novo* metagenome assembler for long-read sequencing data. It ta
 
 ## Citation
 
-[Jim Shaw, Maximillian Marin, and Heng Li. High-resolution metagenome assembly for modern long reads with myloasm. bioRxiv (2025).](https://www.biorxiv.org/content/10.1101/2025.09.05.674543v1)
+[Jim Shaw, Maximillian Marin, and Heng Li. High-resolution metagenome assembly for modern long reads with myloasm. Nature Biotechnology (2025).](https://www.biorxiv.org/content/10.1101/2025.09.05.674543v1) 

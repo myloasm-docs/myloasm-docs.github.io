@@ -1,5 +1,5 @@
 !!! important
-    [The preprint is now out!](https://www.biorxiv.org/content/10.1101/2025.09.05.674543v1) The below results are slightly out of date. 
+    [The paper is now out!](https://www.nature.com/articles/s41587-026-03053-z) The below results are out of date.
 
 ## Algorithm outline
 
