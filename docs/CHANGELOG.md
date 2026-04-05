@@ -1,3 +1,13 @@
+# v0.5.1 (4-5-2026) - Extra checkpoints, faster graph cleaning + bugfix
+
+Major changes
+
+- Fixed a bug for crashing during the polishing stage (https://github.com/bluenote-1577/myloasm/issues/20)
+- Made graph cleaning much faster for massive, complex datasets (https://github.com/bluenote-1577/myloasm/issues/18)
+- Added more checkpoints
+
+Results may change slightly. 
+
 ## v0.5.0 (3-12-2026) - RAM usage + read-mapping optimizations + stalling bug
 
 Major changes
@@ -11,7 +21,7 @@ Minor changes
 - Logging improved slightly
 - (ALPHA) There's a way to optimize memory for the k-mer counting step slightly using kmc as a pre-assembly step. Will improve this; message me if your assembly is dying early. 
 
-## v0.4.0 (1-28-2026) - At least 30% peak RAM than before at baseline, but possibly up to ~80% reduced (i.e., even 5-fold) for large metagenomes
+## v0.4.0 (1-28-2026) - At least 30% less peak RAM than before at baseline, but possibly up to ~80% reduced (i.e., even 5-fold) for large metagenomes
 
 Major changes
 

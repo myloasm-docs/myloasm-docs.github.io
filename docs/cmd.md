@@ -24,6 +24,13 @@ EXAMPLE (PacBio HiFi): myloasm pacbio_reads.fq.gz -o output_directory -t 50 --hi
 * `-c`, `--c <C>` — Compression ratio (1/c k-mers selected). Must be <= 15
  [`11`]
 
+* `--kmc-db <KMC_DB>` — Use precomputed KMC database at this path for kmer counting. This helps if your run dies during the k-mer counting stage. Must use -b and -k21 for KMC db creation with version v3
+* `--dfs-back-search` — Use DFS-based back-safety search in graph cleaning (v2). Default is BFS-based (v1)
+ [`true`]
+
+* `--use-mph` — Use a minimal perfect hash map for the minimizer index (experimental)
+ [`true`]
+
 * `--quality-value-cutoff <QUALITY_VALUE_CUTOFF>` — Disallow reads with < % identity for graph building (estimated from base qualities)
  [`90`]
 
@@ -33,6 +40,15 @@ EXAMPLE (PacBio HiFi): myloasm pacbio_reads.fq.gz -o output_directory -t 50 --hi
 * `-b`, `--bloom-filter-size <BLOOM_FILTER_SIZE>` — Bloom filter size in GB. Increase for massive datasets if initial k-mer counting is a bottleneck (default: automatic estimation)
 * `--aggressive-bloom` — More aggressive filtering of low-abundance k-mers. May be non-deterministic
 * `--new-polish-trimming` — New mode: trim windows during polishing. Takes slightly longer, may incrementally improve polishing for some datasets
+ [`true`]
+
+* `--parallel-graph-bridging` — Allow for parallel graph resolution of bridged repeats. This will make the assembly slightly worse, but may resolve a bottleneck for huge, complex (> 150 Gbp) metagenomes
+* `--high-freq-kmer-threshold <HIGH_FREQ_KMER_THRESHOLD>` — Remove highest frequency k-mers (1 / this)
+ [`100000`]
+
+* `--min-qual-polishing <MIN_QUAL_POLISHING>` — Disallow reads with < % identity for polishing (set to > 0 otherwise polishing may stall)
+ [`75`]
+
 * `-k`, `--kmer-size <KMER_SIZE>` — K-mer size (must be odd and < 24)
  [`21`]
 
@@ -102,7 +118,7 @@ EXAMPLE (PacBio HiFi): myloasm pacbio_reads.fq.gz -o output_directory -t 50 --hi
 
 ### **Overlap Parameters (advanced):**
 
-* `--read-map-batch-size <READ_MAP_BATCH_SIZE>` — Batch size of indexing for read-to-read mapping and overlap stage
+* `--read-map-batch-size <READ_MAP_BATCH_SIZE>` — Batch size of indexing for read-to-read mapping and overlap stage. Higher = faster, but more memory
  [`1000000`]
 
 * `--snpmer-threshold-strict <SNPMER_THRESHOLD_STRICT>` — Snpmer identity threshold for containment and strict overlaps

@@ -59,7 +59,7 @@ The three distinct values represent different levels of nucleotide identity thre
 
 This is estimated by counting 21-mers across the contig and seeing how often they repeat on average after removing the most frequent and least frequent 10% of k-mers. 
 
-- Most complete prokaryotic genomes should have `mult-1.00`. 
+- Most complete prokaryotic genomes should have `mult=1.00`. 
 - Sometimes myloasm erroneously concatenates two similar strain genomes together. In this case, `mult` is > 1.0 and indicative of contamination. 
 - Long reads often contain duplicate plasmids. Sometimes, a plasmid is erroneously duplicated or miscircularized, giving `mult` > 1. 
 

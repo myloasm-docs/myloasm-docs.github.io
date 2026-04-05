@@ -63,7 +63,7 @@ These files show how read (or contigs) map to the final unpolished contigs. We u
 
 ### `binary_temp/`
 
-These are large binary files that are dumped by myloasm. This is useful for rerunning myloasm after a failure by doing `myloasm -o output_dir exist` -- note the magic keyword `exist`. 
+These are large binary files that are dumped by myloasm. This is useful for rerunning myloasm after a failure by doing `myloasm exist -o output_dir` -- note the magic keyword `exist`. 
 
 If you don't want these files to be output, use the `--clean-dir`. 
 

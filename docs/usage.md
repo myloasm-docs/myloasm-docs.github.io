@@ -14,7 +14,7 @@ myloasm reads1.fq reads2.fq reads3.fq -o output_directory -t 50
 myloasm reads1.fq reads2.fq reads3.fq -o output_directory -t 50 --hifi
 ```
 
-- `--hifi`: append the HiFi flag is using HiFi reads. Everything else is the same. 
+- `--hifi`: append the HiFi flag if using HiFi reads. Everything else is the same. 
 
 ### (Optional) Visualizing contigs from myloasm
 

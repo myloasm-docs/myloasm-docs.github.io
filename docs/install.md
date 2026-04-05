@@ -14,12 +14,12 @@ mamba install -c bioconda myloasm mylotools
 
 This installs both (1) myloasm and (2) [mylotools](mylotools.md), a set of utilities for visualizing and manipulating myloasm's outputs. The other methods below do not install mylotools. 
 
-## Portable x86-64 + AVX2 binary (v0.4.0)
+## Portable x86-64 + AVX2 binary (v0.5.1)
 
 ```sh
-wget https://github.com/bluenote-1577/myloasm/releases/download/v0.4.0/myloasm-0.4.0-x86_64-avx2
-chmod +x myloasm-0.4.0-x86_64-avx2
-./myloasm-0.4.0-x86_64-avx2
+wget https://github.com/bluenote-1577/myloasm/releases/download/v0.5.1/myloasm-0.5.1-x86_64-avx2
+chmod +x myloasm-0.5.1-x86_64-avx2
+./myloasm-0.5.1-x86_64-avx2
 ```
 
 - This binary is not static but dynamically linked to older version of shared libraries (GLIBC and GLIBCXX) built on CentOS 7.
