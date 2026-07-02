@@ -19,6 +19,7 @@ positional arguments:
     plot                Generate a plot of various statistics for one of myloasm's output contigs (`report` does `plot` for all contigs)
     strain-viz          Visualize overlaps between and within two or more similar contigs
     extract-contigs     Extract contigs > X bp into a folder as its own fasta
+    annotate-gfa        Annotate final_contig_graph.gfa with sequence bases from the final assembly
 ```
 
 ## Installing mylotools
