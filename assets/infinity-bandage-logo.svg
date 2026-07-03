@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background - removed for transparency -->
+  
+  <!-- First layer: Modified M-shaped base -->
+  <path d="M 200,240 C 250,140 350,140 400,240 C 450,340 550,340 600,240" 
+        fill="none" stroke="#e0f7fa" stroke-width="25" stroke-linecap="round" />
+  
+  <!-- Overlapping colored paths for the bandage plot effect -->
+  <!-- Left loop segments - modified for M shape -->
+  <path d="M 200,240 C 220,190 280,170 320,200" 
+        fill="none" stroke="#4db6ac" stroke-width="12" stroke-linecap="round" />
+  <path d="M 320,200 C 350,220 370,260 350,300" 
+        fill="none" stroke="#9c27b0" stroke-width="12" stroke-linecap="round" />
+  <path d="M 350,300 C 330,330 270,310 240,280" 
+        fill="none" stroke="#ff7043" stroke-width="12" stroke-linecap="round" />
+  <path d="M 240,280 C 210,250 190,210 200,240" 
+        fill="none" stroke="#42a5f5" stroke-width="12" stroke-linecap="round" />
+  
+  <!-- Connection between loops - top -->
+  <path d="M 320,200 C 350,170 450,170 480,200" 
+        fill="none" stroke="#cddc39" stroke-width="12" stroke-linecap="round" />
+        
+  <!-- Connection between loops - bottom -->
+  <path d="M 350,300 C 380,330 420,330 450,300" 
+        fill="none" stroke="#7e57c2" stroke-width="12" stroke-linecap="round" />
+  
+  <!-- Right loop segments - modified for M shape -->
+  <path d="M 600,240 C 580,190 520,170 480,200" 
+        fill="none" stroke="#ef5350" stroke-width="12" stroke-linecap="round" />
+  <path d="M 480,200 C 450,220 430,260 450,300" 
+        fill="none" stroke="#66bb6a" stroke-width="12" stroke-linecap="round" />
+  <path d="M 450,300 C 470,330 530,310 560,280" 
+        fill="none" stroke="#ffca28" stroke-width="12" stroke-linecap="round" />
+  <path d="M 560,280 C 590,250 610,210 600,240" 
+        fill="none" stroke="#ec407a" stroke-width="12" stroke-linecap="round" />
+  
+  <!-- Additional overlapping elements for bandage effect - updated positions -->
+  <circle cx="320" cy="200" r="15" fill="#26a69a" />
+  <circle cx="480" cy="200" r="15" fill="#ab47bc" />
+  <circle cx="350" cy="300" r="15" fill="#ffa726" />
+  <circle cx="450" cy="300" r="15" fill="#5c6bc0" />
+  
+  <!-- Small decorative circles mimicking your reference - consistent coloring for degree 2 nodes -->
+  <circle cx="240" cy="280" r="8" fill="#ff7043" />
+  <circle cx="560" cy="280" r="8" fill="#ec407a" />
+  <!-- Added circles at ends to create M shape -->
+  <circle cx="200" cy="240" r="18" fill="#42a5f5" />
+  <circle cx="600" cy="240" r="18" fill="#ec407a" />
+</svg>
