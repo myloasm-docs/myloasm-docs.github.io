@@ -17,9 +17,9 @@ This installs both (1) myloasm and (2) [mylotools](mylotools.md), a set of utili
 ## Portable x86-64 + AVX2 binary (v0.5.1)
 
 ```sh
-wget https://github.com/bluenote-1577/myloasm/releases/download/v0.5.1/myloasm-0.5.1-x86_64-avx2
-chmod +x myloasm-0.5.1-x86_64-avx2
-./myloasm-0.5.1-x86_64-avx2
+wget https://github.com/bluenote-1577/myloasm/releases/download/v0.6.0/myloasm-0.6.0-x86_64-avx2
+chmod +x myloasm-0.6.0-x86_64-avx2
+./myloasm-0.6.0-x86_64-avx2
 ```
 
 - This binary is not static but dynamically linked to older version of shared libraries (GLIBC and GLIBCXX) built on CentOS 7.
@@ -32,6 +32,7 @@ chmod +x myloasm-0.5.1-x86_64-avx2
 * [Rust programming language](https://www.rust-lang.org/) >= v1.85
 * gcc 4.8+ or clang 3.4+
 * cmake 3.5+
+* zlib (`sudo apt install zlib1g-dev`)
 
 ### x86-64 linux systems with AVX2 (most modern machines)
 
