@@ -11,7 +11,6 @@ This document contains the help content for the `myloasm` command-line program.
 myloasm - high-resolution metagenomic assembly with noisy long reads. See online documentation for full options.
 
 EXAMPLE (Nanopore R10): myloasm nanopore_reads.fq.gz -o output_directory -t 50
-EXAMPLE (PacBio HiFi): myloasm pacbio_reads.fq.gz -o output_directory -t 50 --hifi
 
 **Usage:** `myloasm [OPTIONS] <FASTQ/FASTA (.gz)>...`
 
@@ -21,10 +20,15 @@ EXAMPLE (PacBio HiFi): myloasm pacbio_reads.fq.gz -o output_directory -t 50 --hi
 
 ### **Basic Algorithmic Parameters:**
 
-* `-c`, `--c <C>` — Compression ratio (1/c k-mers selected). Must be <= 15
+* `--kmc` — Count k-mers with `myloasm-kmc-v1` (installed separately; see https://github.com/bluenote-1577/myloasm-kmc). Faster and uses less RAM than the built-in counter; recommended for large complex metagenomes like soil and sediment datasets
+* `--kmc-ram <GB>` — RAM budget in GB for --kmc
+ [`12`]
+
+* `--kmc-stranded-db <PATH>` — Load k-mer counts from a stranded database made by `myloasm-kmc-v1` instead of counting (same k). Lets a run that died after k-mer counting skip that stage. Standard KMC databases are not accepted
+* `--c <C>` — Compression ratio (1/c k-mers selected)
  [`11`]
 
-* `--kmc-db <KMC_DB>` — Use precomputed KMC database at this path for kmer counting. This helps if your run dies during the k-mer counting stage. Must use -b and -k21 for KMC db creation with version v3
+* `-c`, `--compression <COMPRESSION>` — Compression ratio (1/c k-mers selected). Default is -c 11
 * `--dfs-back-search` — Use DFS-based back-safety search in graph cleaning (v2). Default is BFS-based (v1)
  [`true`]
 
@@ -38,10 +42,12 @@ EXAMPLE (PacBio HiFi): myloasm pacbio_reads.fq.gz -o output_directory -t 50 --hi
  [`500`]
 
 * `-b`, `--bloom-filter-size <BLOOM_FILTER_SIZE>` — Bloom filter size in GB. Increase for massive datasets if initial k-mer counting is a bottleneck (default: automatic estimation)
-* `--aggressive-bloom` — More aggressive filtering of low-abundance k-mers. May be non-deterministic
+* `--aggressive-bloom` — More aggressive filtering of low-abundance k-mers. May save some memory, but lead to non-deterministic results
 * `--new-polish-trimming` — New mode: trim windows during polishing. Takes slightly longer, may incrementally improve polishing for some datasets
  [`true`]
 
+* `--hpc` — Experimental: homopolymer-compressed polishing. Compresses runs before POA, then expands using weighted-mode run lengths from read alignments
+* `--abpoa` — Experimental: use abpoa instead of spoa for POA consensus
 * `--parallel-graph-bridging` — Allow for parallel graph resolution of bridged repeats. This will make the assembly slightly worse, but may resolve a bottleneck for huge, complex (> 150 Gbp) metagenomes
 * `--high-freq-kmer-threshold <HIGH_FREQ_KMER_THRESHOLD>` — Remove highest frequency k-mers (1 / this)
  [`100000`]
@@ -64,8 +70,14 @@ EXAMPLE (PacBio HiFi): myloasm pacbio_reads.fq.gz -o output_directory -t 50 --hi
 * `--tip-length-cutoff <TIP_LENGTH_CUTOFF>` — Base length of tip to remove; this gets multiplied by 5-30x during simplification
  [`20000`]
 
+* `--tip-length-cutoff-heavy <TIP_LENGTH_CUTOFF_HEAVY>` — Base length of tip to remove during heavy simplification;
+ [`100000`]
+
 * `--tip-read-cutoff <TIP_READ_CUTOFF>` — Number of reads in tips to remove; this gets multiplied by 5-30x during simplification
  [`3`]
+
+* `--tip-read-cutoff-heavy <TIP_READ_CUTOFF_HEAVY>` — Number of reads in tips to remove during heavy simplification
+ [`5`]
 
 * `--max-bubble-threshold <MAX_BUBBLE_THRESHOLD>` — Maximum bubble length to pop; keep alternates
  [`500000`]
@@ -133,8 +145,8 @@ EXAMPLE (PacBio HiFi): myloasm pacbio_reads.fq.gz -o output_directory -t 50 --hi
 * `--snpmer-error-rate-strict <SNPMER_ERROR_RATE_STRICT>` — Binomial test error parameter strict overlaps
  [`0`]
 
-* `--contain-subsample-rate <CONTAIN_SUBSAMPLE_RATE>` — Relaxed compression ratio during containment; must be > c
- [`44`]
+* `--contain-subsample-rate <CONTAIN_SUBSAMPLE_RATE>` — Relaxed compression ratio during containment; k-mers are subsampled 0 mod this
+ [`4`]
 
 * `--absolute-minimizer-cut-ratio <ABSOLUTE_MINIMIZER_CUT_RATIO>` — Cut overlaps with > (c * this) number of bases between minimizers on average
  [`8`]
@@ -142,7 +154,6 @@ EXAMPLE (PacBio HiFi): myloasm pacbio_reads.fq.gz -o output_directory -t 50 --hi
 * `--relative-minimizer-cut-ratio <RELATIVE_MINIMIZER_CUT_RATIO>` — Cut overlaps with > (this) times more bases between minimizers than the best overlap on average
  [`5`]
 
-* `--disable-error-overlap-rescue` — Disables a SNPmer error overlap rescue heuristic during graph construction
 * `--maximal-end-fuzz <MAXIMAL_END_FUZZ>` — Soft clips with < this # of bases are allowed for alignment
  [`300`]
 

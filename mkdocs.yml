@@ -21,6 +21,7 @@ nav:
   - Results: results.md
   - Advanced info:
     - Full option reference: cmd.md
+    - Disk-based k-mer counting (--kmc): kmc.md
     - Changelog: CHANGELOG.md
   - Frequently asked questions: FAQ.md
 

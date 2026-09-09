@@ -16,6 +16,10 @@ myloasm reads1.fq reads2.fq reads3.fq -o output_directory -t 50 --hifi
 
 - `--hifi`: append the HiFi flag if using HiFi reads. Everything else is the same. 
 
+!!! tip
+
+    Counting k-mers can be a bottleneck for large or complex metagenomes (e.g. soil/sediment). Add `--kmc` to count k-mers on disk instead of in memory - faster and less RAM, but needs the separate [myloasm-kmc](kmc.md) binary. to be installed 
+
 ### (Optional) Visualizing contigs from myloasm
 
 We provide a set of tools called [mylotools](mylotools.md) for quality control, processing, and visualization of myloasm outputs. 
@@ -32,6 +36,7 @@ ls report_and_plots/contig_summary_report.html
 
 ## Useful common parameters
 
+- `--kmc` - Count k-mers on disk with the separate [myloasm-kmc](kmc.md) binary instead of in memory. Faster and less RAM than the default, with identical results; useful for large/complex metagenomes (e.g. soil, sediment). `--kmc-ram` sets its memory budget (default 12 GB). 
 - `--clean-dir` - myloasm dumps large intermediate files to the results directory by default to enable rerunning from intermediate failure. Specify this flag to not dump these large files. 
 - `--min-reads-contig` - myloasm outputs all contigs, even those with a single read, by default. Increase to retain only contigs with >= X reads. 
 - `-c` - increase this to reduce memory and increase speed with some sensitivity loss. Should be <= 15. [default = 11]

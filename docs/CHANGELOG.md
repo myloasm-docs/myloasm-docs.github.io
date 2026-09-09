@@ -1,3 +1,12 @@
+# v0.7.0 (9-9-2026) - Disk-based k-mer counting, length-aware overlap pruning, cleaning tweaks
+
+- Added `--kmc` for disk-based k-mer counting (needs the separate `myloasm-kmc` binary). Faster and uses less RAM than the default; useful for large/complex metagenomes. See [advanced info](kmc.md).
+- Renamed `--kmc-db` to `--kmc-stranded-db`.
+- Added length-aware overlap pruning ("perfect-prefix dominance") prior to unitigging.
+- Output a k-mer count histogram to `misc/kmer_count_histogram.tsv` (informational).
+- Cleaning parameter tweaks (light cleaning more aggressive, heavy cleaning tip removal less aggressive).
+- More descriptive edges in GFA outputs.
+
 # v0.6.0 (7-1-2026) - Fixing homopolymer issues, parameter tweaking, abPOA implementation, and slight fix for highly recombinant + high-cov genomes
 
 - Added homopolymer compression during polishing for stretches with > 10 homopolymers. This fixes some issues during eukaryotic polishing.

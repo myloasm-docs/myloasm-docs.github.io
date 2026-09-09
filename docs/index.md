@@ -42,3 +42,9 @@ Myloasm is a *de novo* metagenome assembler for long-read sequencing data. It ta
 ## Citation
 
 [Jim Shaw, Maximillian Marin, and Heng Li. High-resolution metagenome assembly for modern long reads with myloasm. Nature Biotechnology (2026).](https://www.nature.com/articles/s41587-026-03053-z) 
+
+Myloasm uses several tools / libraries, which we would like to acknowledge:
+
+- KMC - Kokot, Marek, Maciej Długosz, and Sebastian Deorowicz. "KMC 3: counting and manipulating k-mer statistics." Bioinformatics (2017)
+- abPOA - Gao, Yan, et al. "abPOA: an SIMD-based C library for fast partial order alignment using adaptive band." Bioinformatics (2021)
+- SPOA - Vaser, Robert, et al. "Fast and accurate de novo genome assembly from long uncorrected reads." Genome research (2017)
