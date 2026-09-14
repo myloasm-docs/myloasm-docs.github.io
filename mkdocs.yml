@@ -1,5 +1,6 @@
 site_name: myloasm - metagenomic assembly with (noisy) long reads
 site_url: https://myloasm-docs.github.io/
+repo_url: https://github.com/bluenote-1577/myloasm
 theme:
   name: material
   palette:
