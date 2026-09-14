@@ -9,10 +9,14 @@ Myloasm can be installed in three ways.
 [![Anaconda-Server Badge](https://anaconda.org/bioconda/myloasm/badges/latest_release_date.svg)](https://anaconda.org/bioconda/myloasm)
 
 ```sh
-mamba install -c bioconda myloasm mylotools
+mamba install -c bioconda myloasm mylotools myloasm-kmc
 ```
 
-This installs both (1) myloasm and (2) [mylotools](mylotools.md), a set of utilities for visualizing and manipulating myloasm's outputs. The other methods below do not install mylotools. 
+This installs three programs:
+
+1. The myloasm assembler. The other methods below only install myloasm. 
+2. (Optional) - [mylotools](mylotools.md), a set of utilities for visualizing and manipulating myloasm's outputs. 
+3. (Optional) - [myloasm-kmc](kmc.md), a fast on-disk kmer counter (only used if `--kmc` is specified). 
 
 ## Portable x86-64 + AVX2 binary 
 

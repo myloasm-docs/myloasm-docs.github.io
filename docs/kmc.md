@@ -4,8 +4,15 @@ See the [myloasm-kmc repo](https://github.com/bluenote-1577/myloasm-kmc) for ins
 
 ### Installation
 
-Requirements: very standard unix-based toolchain (should be available by default) + the Rust language. Specifically, 
+#### Option 1: conda
 
+```sh
+conda install -c bioconda myloasm-kmc
+```
+
+#### Option 2: build from source
+
+Requirements: very standard unix-based toolchain (should be available by default) + the Rust language. Specifically, 
 
 - a C++14 compiler (GCC 5+ or Clang)
 - `zlib.h` - zlib library installed
